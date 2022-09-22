@@ -1,0 +1,6 @@
+
+Œ
+java:S11302"qRemove the declaration of thrown exception 'java.text.ParseException', as it cannot be thrown from method's body.(‘Êšˆüÿÿÿÿ
+c	java:S1008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºì—
+h
+java:S37768"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ºì—

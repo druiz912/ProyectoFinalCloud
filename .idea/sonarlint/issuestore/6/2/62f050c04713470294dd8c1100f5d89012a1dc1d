@@ -1,0 +1,7 @@
+
+<
+java:S1452"&Remove usage of generic wildcard type.(ââ¬”
+F
+java:S1172&"+Remove this unused method parameter "role".(Û²¸üûÿÿÿÿ
+h
+java:S62042"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(äÒˆ

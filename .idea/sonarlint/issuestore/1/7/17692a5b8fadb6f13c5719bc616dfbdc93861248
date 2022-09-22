@@ -1,0 +1,7 @@
+
+L
+java:S1905'"6Remove this unnecessary cast to "HttpServletResponse".(áºÂŒ
+m
+java:S6204<"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(Ä×óéúÿÿÿÿ
+E
+java:S1172A"*Remove this unused method parameter "res".(ˆÖÀøÿÿÿÿ

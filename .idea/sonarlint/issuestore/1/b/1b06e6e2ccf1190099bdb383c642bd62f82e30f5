@@ -1,0 +1,11 @@
+
+o
+java:S1192c"TDefine a constant instead of duplicating this literal "Invalid date format" 3 times.(¬ΐ•»ύÿÿÿÿ
+‚
+java:S1319H"gThe type of "conditions" should be an interface such as "Map" rather than the implementation "HashMap".(δυ­ϊÿÿÿÿ
+h	java:S100H"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(δυ­ϊÿÿÿÿ
+m
+java:S3776H"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(δυ­ϊÿÿÿÿ
+i	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(αΦεωÿÿÿÿ
+n
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(αΦεωÿÿÿÿ

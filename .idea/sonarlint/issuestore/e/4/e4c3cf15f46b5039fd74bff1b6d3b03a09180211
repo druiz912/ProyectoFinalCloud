@@ -1,0 +1,8 @@
+
+R
+java:S1172Z"0Remove this unused method parameter "condition".(¼¬§ùÿÿÿÿ8ë¥çùµ0
+R
+java:S1172f"0Remove this unused method parameter "condition".(ó¼×“şÿÿÿÿ8ï¥çùµ0
+j	java:S100r"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºì—8ñ¥çùµ0
+o
+java:S3776r"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ºì—8ó¥çùµ0

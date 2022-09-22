@@ -1,0 +1,118 @@
+version: "3.8"
+services:
+  db-back-empresa:
+    image: mysql
+    container_name: backempresa-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: backempresa
+
+  db-back-web:
+    image: mysql
+    container_name: backweb-db
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: backweb
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin_backempresa
+    ports:
+      - "8096:8096"
+    links:
+      - db-back-empresa
+    environment:
+      PMA_HOST: db-back-empresa
+      PMA_PORT: 3306
+    restart: always
+
+  phpmyadmin2:
+    image: phpmyadmin
+    container_name: phpmyadmin_backweb
+    ports:
+      - "8098:8098"
+    links:
+      - db-back-web
+    environment:
+      PMA_HOST: db-back-web
+      PMA_PORT: 3306
+    restart: always
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_SECURE_CLIENT_PORT:
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on:
+      - zookeeper
+    restart: always
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  eureka:
+    build: ./eureka-server
+    container_name: eureka
+    ports:
+      - "8761:8761"
+
+  gateway:
+    build: ./gateway
+    container_name: gateway
+    ports:
+      - "8080:8080"
+    environment:
+      eureka.client.service-url.defaultZone: http://eureka:8761/eureka
+    depends_on:
+      - eureka
+
+  back-empresa:
+    build: ./Back-Empresa
+    container_name: backempresa
+    ports:
+      - '8081:8081'
+    environment:
+      - spring.datasource.url=jdbc:mysql://db-back-empresa:3306/backempresa
+      - spring.kafka.bootstrap-servers=kafka:9092
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+    depends_on:
+      - db-back-empresa
+      - eureka
+      - kafka
+      - gateway
+
+  back-web:
+    build: ./Back-Web
+    container_name: back-web
+    ports:
+      - "8082:8082"
+    environment:
+      - spring.datasource.url=jdbc:mysql://db-back-web:3306/backweb
+      - spring.kafka.bootstrap-servers=kafka:9092
+      - eureka.client.service-url.defaultZone=http://eureka:8761/eureka
+      - spring.datasource.username=root
+      - spring.datasource.password=secret
+    depends_on:
+      - db-back-web
+      - eureka
+      - kafka
+      - gateway
