@@ -45,22 +45,17 @@ Execute the following *docker-compose* command to run the app in containers
 ## ¿Cómo realizo una reserva?
 
 ### 1. Crear una reserva
-<br/>
 > Endpoint de backweb
 
 | Método   | URL                                      | Descripción                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `/api/v0/reservas`                      | Crea una nueva reserva                    |
-<br/>
 ### 2. Revisar que se haya hecho correctamente
-<br/>
 #### 2.1. Obtener todas las reservas
-<br/>
 > Endpoint de backweb
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `/api/v0/reservas`         | Todo el historial de reservas        |
-<br/>
 #### 2.2. Obtener reservas según parámetros
 > Parámetros --> Ciudad, fecha (inferior ,superior), hora(inferior y superior)
 
@@ -74,7 +69,6 @@ Execute the following *docker-compose* command to run the app in containers
 | `upperDate`    | La fecha tope de la reserva (opcional) |
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
-<br/>
 #### 2.3. Obtener lista de buses
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
@@ -87,12 +81,10 @@ Execute the following *docker-compose* command to run the app in containers
 | `upperDate`    | La fecha tope de la reserva (opcional) |
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
-<br/>
 ## 3. Obtener token de auth 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/login`         | Registro de usuario con *mail* y *phone*
-<br/>
 #### Responses
 ```
 [
@@ -103,7 +95,6 @@ Execute the following *docker-compose* command to run the app in containers
 ```
 > ¿Pero qué hago con ese token? <br/>
 > *Crear una reserva desde empresa y reenviar mails*
-<br/>
 ## 4. Obtener lista de usuarios 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
