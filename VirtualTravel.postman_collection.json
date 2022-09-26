@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "5cbc583e-aaa6-442e-a671-5d6c621a0441",
+		"name": "VirtualTravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21849125"
+	},
+	"item": [
+		{
+			"name": "BackEmpresa (8081)",
+			"item": [
+				{
+					"name": "Reservas",
+					"item": [
+						{
+							"name": "Crear reserva (TOKEN)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJqd3QiLCJzdWIiOiJkYW5pQGguY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY2Mzg0NjM1MSwiZXhwIjoxNjYzODQ4MTUxfQ.N6TwT4a6TGNb6tB0yIE2BF8Tl8h92ogVq064QstcJesWytHlsmKpW9xxIFC9a6yvicBSDRb0of9zfR_Cr9hNjA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Francisco\",\r\n    \"surname\": \"Perez\",\r\n    \"phone\": \"67543231\",\r\n    \"city\": \"Valencia\",\r\n    \"mail\": \"manuel@g.com\",\r\n    \"date\": \"2022-09-24\",\r\n    \"hour\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8081/api/v0/reserva",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v0",
+										"reserva"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reservas con condiciones",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/api/v0/reserva/Bilbao?lowerDate=2022-09-20&lowerHour=7",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v0",
+										"reserva",
+										"Bilbao"
+									],
+									"query": [
+										{
+											"key": "lowerDate",
+											"value": "2022-09-20",
+											"description": "Reservas por encima de la fecha dada (OBLIGATORIO)"
+										},
+										{
+											"key": "upperDate",
+											"value": "2022-12-23",
+											"description": "Reservas por debajo de la fecha dada (OPCIONAL)",
+											"disabled": true
+										},
+										{
+											"key": "lowerHour",
+											"value": "7",
+											"description": "Reservas por encima de la hora dada (OPCIONAL)"
+										},
+										{
+											"key": "upperHour",
+											"value": "21",
+											"description": "Reservas por debajo de la hora dada (OPCIONAL)",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AllReservas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/v0/reserva",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v0",
+										"reserva"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Buses",
+					"item": [
+						{
+							"name": "Autobuses disponibles según fecha y hora",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/api/v0/bus/available/Bilbao?lowerDate=2022-09-10",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v0",
+										"bus",
+										"available",
+										"Bilbao"
+									],
+									"query": [
+										{
+											"key": "lowerDate",
+											"value": "2022-09-10",
+											"description": "Buses con fecha de salida por encima de -value-"
+										},
+										{
+											"key": "upperDate",
+											"value": "2022-12-31",
+											"description": "Buses con fecha de salida por debajo de -value-",
+											"disabled": true
+										},
+										{
+											"key": "lowerHour",
+											"value": "7",
+											"description": "Buses con hora de salida por encima de -value-",
+											"disabled": true
+										},
+										{
+											"key": "upperHour",
+											"value": "21",
+											"description": "Buses con hora de salida por debajo de -value-",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Mails",
+					"item": [
+						{
+							"name": "Correos mediante parámetros",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8081/api/v0/mails?lowerDate=2022-09-15&upperDate=2022-09-30&city=Valencia",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v0",
+										"mails"
+									],
+									"query": [
+										{
+											"key": "lowerDate",
+											"value": "2022-09-15",
+											"description": "Busca mails con fecha de la reserva superior a -value-"
+										},
+										{
+											"key": "upperDate",
+											"value": "2022-09-30",
+											"description": "Busca mails con fecha de la reserva inferior a -value-"
+										},
+										{
+											"key": "lowerHour",
+											"value": "7",
+											"description": "Busca mails con hora de reserva por encima de -value-",
+											"disabled": true
+										},
+										{
+											"key": "upperHour",
+											"value": "21",
+											"description": "Busca mails con hora de reserva por debajo de -value-",
+											"disabled": true
+										},
+										{
+											"key": "city",
+											"value": "Valencia"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reenviar un correo (TOKEN)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJqd3QiLCJzdWIiOiJkYW5pQGguY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY2Mzg0MzE3NiwiZXhwIjoxNjYzODQ0OTc2fQ.eqZnXDA2ocv-6a2ww-oEoDVhTbyMtXFT1dZdjKgjZWFh2D8VEuI2LpYNnDvIoOnSqX8HcbwI-_NMAUaKJsdE-Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"city\": \"Madrid\",\r\n    \"mail\": \"dani@h.com\",\r\n    \"date\": \"2022-09-22\",\r\n    \"hour\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8081/api/v0/mails",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"v0",
+										"mails"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "allUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/api/v0/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"v0",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BackWeb (8082) --> Gateway(8080)",
+			"item": [
+				{
+					"name": "Reservas",
+					"item": [
+						{
+							"name": "Crear reserva",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Julia\",\r\n    \"surname\": \"Rodríguez\",\r\n    \"phone\": \"612360815\",\r\n    \"city\": \"Bilbao\",\r\n    \"mail\": \"julia@h.com\",\r\n    \"date\": \"2022-09-25\",\r\n    \"hour\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v0/reservas",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v0",
+										"reservas"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ver reservas con condiciones",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v0/reservas/Valencia?lowerDate=2022-09-20",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v0",
+										"reservas",
+										"Valencia"
+									],
+									"query": [
+										{
+											"key": "lowerDate",
+											"value": "2022-09-20",
+											"description": "Reservas por encima la fecha dada (OBLIGATORIO)"
+										},
+										{
+											"key": "upperDate",
+											"value": "2022-12-23",
+											"description": "Reservas por debajo de la fecha dada (OPCIONAL)",
+											"disabled": true
+										},
+										{
+											"key": "lowerHour",
+											"value": "7",
+											"description": "Reservas por encima de la hora dada(OPCIONAL)",
+											"disabled": true
+										},
+										{
+											"key": "upperHour",
+											"value": "19",
+											"description": "Reservas por debajo de la hora dada(OPCIONAL)",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Todas las reservas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v0/reservas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v0",
+										"reservas"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Buses",
+					"item": [
+						{
+							"name": "Autobuses disponibles según fecha y hora",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "Bearer: eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJqd3QiLCJzdWIiOiJkYW5pZWxAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY2MzU4ODAzNywiZXhwIjoxNjYzNTg5ODM3fQ.gImHdEEpWF4-BMDZ52UFLCi6AIhNM91jGYCFwwSwCPkOEw0n85VhwujLD6H3KQj3d76dy0cB4s7zQ0jYDi-2aQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v0/bus/available/Valencia?lowerDate=2022-09-20",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v0",
+										"bus",
+										"available",
+										"Valencia"
+									],
+									"query": [
+										{
+											"key": "lowerDate",
+											"value": "2022-09-20",
+											"description": "Buses con fecha de salida por encima de -value-"
+										},
+										{
+											"key": "upperDate",
+											"value": "2022-12-23",
+											"description": "Buses con fecha de salida por debajo de -value-",
+											"disabled": true
+										},
+										{
+											"key": "lowerHour",
+											"value": "7",
+											"description": "Buses con hora de salida por encima de -value-",
+											"disabled": true
+										},
+										{
+											"key": "upperHour",
+											"value": "21",
+											"description": "Buses con hora de salida por debajo de -value-",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Registro con email y phone",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "mail",
+								"value": "dani@h.com",
+								"description": "admin@virtualtravel.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "685425410",
+								"description": "admin",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"description": "14b6709e-5eef-409b-a81b-c3af67b9c375",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v0/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
