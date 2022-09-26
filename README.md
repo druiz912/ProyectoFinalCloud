@@ -39,25 +39,28 @@ Execute the following *docker-compose* command to run the app in containers
 > After it you will have  access to the app throught the *gateway* in the port 8080, and you will have two instances of *backweb* and *backempresa*
 
 # Let`s try the app
-> Follow the points step by step in order, they cover all the possibilities or so I think...
+> Follow the points step by step in order, they cover all the possibilities or so I think...<br/>
 > Im sorry now its time to write in spanish.
 
 ## ¿Cómo realizo una reserva?
 
 ### 1. Crear una reserva
+<br/>
 > Endpoint de backweb
 
 | Método   | URL                                      | Descripción                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `/api/v0/reservas`                      | Crea una nueva reserva                    |
-
+<br/>
 ### 2. Revisar que se haya hecho correctamente
+<br/>
 #### 2.1. Obtener todas las reservas
+<br/>
 > Endpoint de backweb
-
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `/api/v0/reservas`         | Todo el historial de reservas        |
+<br/>
 #### 2.2. Obtener reservas según parámetros
 > Parámetros --> Ciudad, fecha (inferior ,superior), hora(inferior y superior)
 
@@ -71,7 +74,7 @@ Execute the following *docker-compose* command to run the app in containers
 | `upperDate`    | La fecha tope de la reserva (opcional) |
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
-
+<br/>
 #### 2.3. Obtener lista de buses
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
@@ -84,11 +87,12 @@ Execute the following *docker-compose* command to run the app in containers
 | `upperDate`    | La fecha tope de la reserva (opcional) |
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
-
+<br/>
 ## 3. Obtener token de auth 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/login`         | Registro de usuario con *mail* y *phone*
+<br/>
 #### Responses
 ```
 [
@@ -97,9 +101,9 @@ Execute the following *docker-compose* command to run the app in containers
 }
 ]
 ```
-> ¿Pero qué hago con ese token? 
+> ¿Pero qué hago con ese token? <br/>
 > *Crear una reserva desde empresa y reenviar mails*
-
+<br/>
 ## 4. Obtener lista de usuarios 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
