@@ -53,6 +53,7 @@ Execute the following *docker-compose* command to run the app in containers
 ### 2. Revisar que se haya hecho correctamente
 #### 2.1. Obtener todas las reservas
 > Endpoint de backweb
+
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `/api/v0/reservas`         | Todo el historial de reservas        |
@@ -70,6 +71,7 @@ Execute the following *docker-compose* command to run the app in containers
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
 #### 2.3. Obtener lista de buses
+
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/bus/available/{city}?lowerDate=2022-09-20`         | Lista de buses según parámetros         |
@@ -82,6 +84,7 @@ Execute the following *docker-compose* command to run the app in containers
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
 ## 3. Obtener token de auth 
+
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/login`         | Registro de usuario con *mail* y *phone*
@@ -95,7 +98,9 @@ Execute the following *docker-compose* command to run the app in containers
 ```
 > ¿Pero qué hago con ese token? <br/>
 > *Crear una reserva desde empresa y reenviar mails*
+> 
 ## 4. Obtener lista de usuarios 
+
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/users`         | Lista de todos los usuarios que han realizado una reserva con **VirtualTravel.**
