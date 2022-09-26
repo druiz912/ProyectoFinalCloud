@@ -4,14 +4,19 @@
 <div align="center">
   <h3 align="center">VIRTUALTRAVEL</h3>
   <p align="center">
-Ejercicio final realizado con las siguientes tecnologías:
-**-Java
+Ejercicio final realizado con las siguientes tecnologías:<br/>
+-Java
+<br/>
 -Spring Boot
--Spring Cloud,
+<br/>
+-Spring Cloud
+<br/>
 -Kafka
-- Load Balancer,
-- Microservices**
-  </p>
+<br/>
+- Load Balancer
+<br/>
+- Microservices
+ </p>
 </div>
 
 ## Empecemos
@@ -99,12 +104,4 @@ Execute the following *docker-compose* command to run the app in containers
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/users`         | Lista de todos los usuarios que han realizado una reserva con **VirtualTravel.**
-
-#### Responses
-```
-[
-  {
-    Bearer Token: **token**
-  }
-]
 ```
