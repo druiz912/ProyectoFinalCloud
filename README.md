@@ -83,7 +83,11 @@ Execute the following *docker-compose* command to run the app in containers
 | `upperDate`    | La fecha tope de la reserva (opcional) |
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
+<<<<<<< HEAD
 ## 3. Obtener token de auth
+=======
+## 3. Obtener token de auth 
+>>>>>>> 79ffd5917c8738f645e5e3ea1855e4730ef60d9b
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
@@ -98,10 +102,19 @@ Execute the following *docker-compose* command to run the app in containers
 ```
 > ¿Pero qué hago con ese token? <br/>
 > *Crear una reserva desde empresa y reenviar mails*
+<<<<<<< HEAD
 >
 ## 4. Obtener lista de usuarios
+=======
+> 
+## 4. Obtener lista de usuarios 
+>>>>>>> 79ffd5917c8738f645e5e3ea1855e4730ef60d9b
 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/users`         | Lista de todos los usuarios que han realizado una reserva con **VirtualTravel.**
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 79ffd5917c8738f645e5e3ea1855e4730ef60d9b
