@@ -18,6 +18,7 @@ import java.util.List;
 
 import static com.druiz.bosonit.backweb.config.security.Constants.*;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("api/v0/reservas")
 public class ReservaController {

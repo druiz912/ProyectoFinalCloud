@@ -4,14 +4,19 @@
 <div align="center">
   <h3 align="center">VIRTUALTRAVEL</h3>
   <p align="center">
-Ejercicio final realizado con las siguientes tecnologías:
-**-Java
+Ejercicio final realizado con las siguientes tecnologías:<br/>
+-Java
+<br/>
 -Spring Boot
--Spring Cloud,
+<br/>
+-Spring Cloud
+<br/>
 -Kafka
-- Load Balancer,
-- Microservices**
-  </p>
+<br/>
+- Load Balancer
+<br/>
+- Microservices
+ </p>
 </div>
 
 ## Empecemos
@@ -34,7 +39,7 @@ Execute the following *docker-compose* command to run the app in containers
 > After it you will have  access to the app throught the *gateway* in the port 8080, and you will have two instances of *backweb* and *backempresa*
 
 # Let`s try the app
-> Follow the points step by step in order, they cover all the possibilities or so I think...
+> Follow the points step by step in order, they cover all the possibilities or so I think...<br/>
 > Im sorry now its time to write in spanish.
 
 ## ¿Cómo realizo una reserva?
@@ -45,7 +50,6 @@ Execute the following *docker-compose* command to run the app in containers
 | Método   | URL                                      | Descripción                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `POST`    | `/api/v0/reservas`                      | Crea una nueva reserva                    |
-
 ### 2. Revisar que se haya hecho correctamente
 #### 2.1. Obtener todas las reservas
 > Endpoint de backweb
@@ -66,8 +70,8 @@ Execute the following *docker-compose* command to run the app in containers
 | `upperDate`    | La fecha tope de la reserva (opcional) |
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
-
 #### 2.3. Obtener lista de buses
+
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/bus/available/{city}?lowerDate=2022-09-20`         | Lista de buses según parámetros         |
@@ -79,8 +83,8 @@ Execute the following *docker-compose* command to run the app in containers
 | `upperDate`    | La fecha tope de la reserva (opcional) |
 | `lowerHour`    | La fecha minima de la reserva (opcional) |
 | `upperHour`    | La hora tope de la reserva (opcional) |
+## 3. Obtener token de auth
 
-## 3. Obtener token de auth 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/login`         | Registro de usuario con *mail* y *phone*
@@ -92,19 +96,12 @@ Execute the following *docker-compose* command to run the app in containers
 }
 ]
 ```
-> ¿Pero qué hago con ese token? 
+> ¿Pero qué hago con ese token? <br/>
 > *Crear una reserva desde empresa y reenviar mails*
+>
+## 4. Obtener lista de usuarios
 
-## 4. Obtener lista de usuarios 
 | Method   | URL                                      | Description                              |
 | -------- | ---------------------------------------- | ---------------------------------------- |
 | `GET`    | `api/v0/users`         | Lista de todos los usuarios que han realizado una reserva con **VirtualTravel.**
-
-#### Responses
-```
-[
-  {
-    Bearer Token: **token**
-  }
-]
 ```
